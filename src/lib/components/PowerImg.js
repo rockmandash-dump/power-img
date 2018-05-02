@@ -1,7 +1,7 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 import { Surface } from 'gl-react-dom';
 import Image from '../components/Image';
-import getImageSize from '../utility/getImageSize';
+import getImageTag from '../utility/getImageTag';
 
 class PowerImg extends Component {
   constructor(props) {
@@ -9,29 +9,21 @@ class PowerImg extends Component {
     this.state = { naturalWidth: 0, naturalHeight: 0 };
   }
   componentDidMount() {
-    getImageSize(this.props.src, this.handleImageOnLoad);
+    this.handleImage();
   }
-  handleImageOnLoad = img => {
+  handleImage = async () => {
+    const imageTag = await getImageTag(this.props.src);
     this.setState({
-      naturalWidth: img.naturalWidth,
-      naturalHeight: img.naturalHeight
+      naturalWidth: imageTag.naturalWidth,
+      naturalHeight: imageTag.naturalHeight
     });
   };
-
-  handleClick = () => {
-    this.setState({ naturalWidth: this.state.naturalWidth + 50 });
-  };
-
   render() {
     const { naturalWidth, naturalHeight } = this.state;
     return (
-      <Fragment>
-        <button onClick={this.handleClick}>click</button>
-
-        <Surface width={naturalWidth} height={naturalHeight}>
-          <Image>{this.props.src}</Image>
-        </Surface>
-      </Fragment>
+      <Surface width={naturalWidth} height={naturalHeight}>
+        <Image>{this.props.src}</Image>
+      </Surface>
     );
   }
 }
