@@ -3035,6 +3035,15 @@ gl-format-compiler-error@^1.0.2:
     glsl-shader-name "^1.0.0"
     sprintf-js "^1.0.3"
 
+gl-react-dom@^3.15.0:
+  version "3.15.0"
+  resolved "https://registry.yarnpkg.com/gl-react-dom/-/gl-react-dom-3.15.0.tgz#568e4bc441008630e79237e8f212e103da458bd6"
+  dependencies:
+    invariant "^2.2.1"
+    prop-types "^15.6.1"
+    raf "^3.3.0"
+    webgltexture-loader-dom "^0.6.0"
+
 gl-react@^3.15.0:
   version "3.15.0"
   resolved "https://registry.yarnpkg.com/gl-react/-/gl-react-3.15.0.tgz#bd98e8955c61ac5fa466fffd6b146175f839da5a"
@@ -5731,7 +5740,7 @@ querystringify@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/querystringify/-/querystringify-2.0.0.tgz#fa3ed6e68eb15159457c89b37bc6472833195755"
 
-raf@3.4.0:
+raf@3.4.0, raf@^3.3.0:
   version "3.4.0"
   resolved "https://registry.yarnpkg.com/raf/-/raf-3.4.0.tgz#a28876881b4bc2ca9117d4138163ddb80f781575"
   dependencies:
@@ -5769,6 +5778,10 @@ raw-body@2.3.2:
     http-errors "1.6.2"
     iconv-lite "0.4.19"
     unpipe "1.0.0"
+
+raw-loader@^0.5.1:
+  version "0.5.1"
+  resolved "https://registry.yarnpkg.com/raw-loader/-/raw-loader-0.5.1.tgz#0c3d0beaed8a01c966d9787bf778281252a979aa"
 
 rc@^1.0.1, rc@^1.1.6, rc@^1.1.7:
   version "1.2.7"
@@ -7147,6 +7160,32 @@ wbuf@^1.1.0, wbuf@^1.7.2:
 weakmap-shim@^1.1.0:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/weakmap-shim/-/weakmap-shim-1.1.1.tgz#d65afd784109b2166e00ff571c33150ec2a40b49"
+
+webgltexture-loader-dom-canvas@^0.6.0:
+  version "0.6.0"
+  resolved "https://registry.yarnpkg.com/webgltexture-loader-dom-canvas/-/webgltexture-loader-dom-canvas-0.6.0.tgz#46f24533e4ed7e78902850ea79e053608c6516fa"
+  dependencies:
+    webgltexture-loader "^0.6.0"
+
+webgltexture-loader-dom-image-url@^0.6.0:
+  version "0.6.0"
+  resolved "https://registry.yarnpkg.com/webgltexture-loader-dom-image-url/-/webgltexture-loader-dom-image-url-0.6.0.tgz#3c7faac7bf93a2e61ccfd2085b499750f603a48f"
+  dependencies:
+    webgltexture-loader "^0.6.0"
+
+webgltexture-loader-dom-video@^0.6.0:
+  version "0.6.0"
+  resolved "https://registry.yarnpkg.com/webgltexture-loader-dom-video/-/webgltexture-loader-dom-video-0.6.0.tgz#5384cd75868c50948a42c9bbaa20e20e8a923727"
+  dependencies:
+    webgltexture-loader "^0.6.0"
+
+webgltexture-loader-dom@^0.6.0:
+  version "0.6.0"
+  resolved "https://registry.yarnpkg.com/webgltexture-loader-dom/-/webgltexture-loader-dom-0.6.0.tgz#813666bb4fbd87d4c3b2f98f197e8be00a4c8c90"
+  dependencies:
+    webgltexture-loader-dom-canvas "^0.6.0"
+    webgltexture-loader-dom-image-url "^0.6.0"
+    webgltexture-loader-dom-video "^0.6.0"
 
 webgltexture-loader-ndarray@^0.9.0:
   version "0.9.0"

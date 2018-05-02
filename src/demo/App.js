@@ -1,10 +1,12 @@
-import React from 'react';
-import Example from '../lib';
+import React, { Fragment } from 'react';
+import PowerImg from '../lib';
+import cat from './images/cat.jpg';
 
 const App = () => (
-  <div>
-    <Example />
-  </div>
+  <Fragment>
+    <p>Power Image Demo</p>
+    <PowerImg src={cat} />
+  </Fragment>
 );
 
 export default App;

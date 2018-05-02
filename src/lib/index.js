@@ -1,3 +1,3 @@
-import Example from './components/Example';
+import PowerImg from './components/PowerImg';
 
-export default Example;
+export default PowerImg;
