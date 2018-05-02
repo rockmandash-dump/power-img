@@ -1,3 +1,3 @@
-import PowerImg from './components/PowerImg';
+import PowerImg from './PowerImg';
 
 export default PowerImg;
