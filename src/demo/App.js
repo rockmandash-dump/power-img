@@ -3,8 +3,14 @@ import PowerImg from '../lib';
 import cat from './images/cat.jpg';
 
 const effects = [
-  { type: 'DiamondCrop' },
-  { type: 'Blur', factor: 10, passes: 4 }
+  { type: 'DiamondCrop', config: null },
+  {
+    type: 'Blur',
+    config: {
+      factor: 10,
+      passes: 4
+    }
+  }
 ];
 
 class App extends Component {
