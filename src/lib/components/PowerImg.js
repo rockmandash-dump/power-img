@@ -1,29 +1,37 @@
-import React, { Component } from 'react';
-import { Shaders, Node, GLSL } from 'gl-react';
+import React, { Component, Fragment } from 'react';
 import { Surface } from 'gl-react-dom';
-import helloGL from '../shaders/helloGL.glsl';
-
-console.log(helloGL);
-
-// in gl-react you need to statically define "shaders":
-const shaders = Shaders.create({
-  helloGL: {
-    // This is our first fragment shader in GLSL language (OpenGL Shading Language)
-    // (GLSL code gets compiled and run on the GPU)
-    frag: GLSL`${helloGL}`
-    // the main() function is called FOR EACH PIXELS
-    // the varying uv is a vec2 where x and y respectively varying from 0.0 to 1.0.
-    // we set in output the pixel color using the vec4(r,g,b,a) format.
-    // see GLSL_ES_Specification_1.0.17
-  }
-});
+import Image from '../components/Image';
+import getImageSize from '../utility/getImageSize';
 
 class PowerImg extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { naturalWidth: 0, naturalHeight: 0 };
+  }
+  componentDidMount() {
+    getImageSize(this.props.src, this.handleImageOnLoad);
+  }
+  handleImageOnLoad = img => {
+    this.setState({
+      naturalWidth: img.naturalWidth,
+      naturalHeight: img.naturalHeight
+    });
+  };
+
+  handleClick = () => {
+    this.setState({ naturalWidth: this.state.naturalWidth + 50 });
+  };
+
   render() {
+    const { naturalWidth, naturalHeight } = this.state;
     return (
-      <Surface width={300} height={300}>
-        <Node shader={shaders.helloGL} />
-      </Surface>
+      <Fragment>
+        <button onClick={this.handleClick}>click</button>
+
+        <Surface width={naturalWidth} height={naturalHeight}>
+          <Image>{this.props.src}</Image>
+        </Surface>
+      </Fragment>
     );
   }
 }
