@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { Surface } from 'gl-react-dom';
 import Image from '../components/Image';
 import getImageTag from '../utility/getImageTag';
+import { Blur } from '../gl-react-blur';
+import DiamondCrop from './DiamondCrop';
 
 class PowerImg extends Component {
   constructor(props) {
@@ -18,11 +20,16 @@ class PowerImg extends Component {
       naturalHeight: imageTag.naturalHeight
     });
   };
+
   render() {
     const { naturalWidth, naturalHeight } = this.state;
     return (
       <Surface width={naturalWidth} height={naturalHeight}>
-        <Image>{this.props.src}</Image>
+        <DiamondCrop>
+          <Blur factor={10} passes={4}>
+            <Image>{this.props.src}</Image>
+          </Blur>
+        </DiamondCrop>
       </Surface>
     );
   }
