@@ -1,11 +1,11 @@
-import React from 'react';
-import MapEffects from './MapEffects';
-import Image from './components/Image';
 import reduceRight from 'lodash/reduceRight';
+import React from 'react';
+import MapEffectsToNode from './MapEffectsToNode';
+import Image from './components/Image';
 
 const RenderNode = (src, effects) =>
   reduceRight(
-    MapEffects(effects),
+    MapEffectsToNode(effects),
     (Total, Current) => {
       return React.createElement(Current.element, Current.config, Total);
     },

@@ -1,7 +1,7 @@
 import DiamondCrop from './components/DiamondCrop';
 import { Blur } from './gl-react-blur';
 
-const MapEffects = effects =>
+const MapEffectsToNode = effects =>
   effects.map(effect => {
     switch (effect.type) {
       case 'DiamondCrop':
@@ -13,4 +13,4 @@ const MapEffects = effects =>
     }
   });
 
-export default MapEffects;
+export default MapEffectsToNode;
